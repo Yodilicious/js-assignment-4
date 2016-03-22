@@ -20,17 +20,16 @@ function validateFirstName()
     
     if(!fName)
     {
-        document.getElementById('errorMessage').innerHTML += '<div>Please enter your First Name</div>';
-        document.getElementById('firstName').focus();
+        document.getElementById('firstNameValidator').innerHTML = '<div>Please enter your First Name</div>';
         return false;
     }
     else if(fName.length < 2)
     {
-        document.getElementById('errorMessage').innerHTML += '<div>First Name needs to be more than 2 characters</div>';
-        document.getElementById('firstName').focus();
+        document.getElementById('firstNameValidator').innerHTML = '<div>First Name needs to be more than 2 characters</div>';
         return false;
     }
 
+    document.getElementById('firstNameValidator').innerHTML = '';
     return true;
 }
 
@@ -40,17 +39,16 @@ function validateLastName()
     
     if(!lName)
     {
-        document.getElementById('errorMessage').innerHTML += '<div>Please enter your Last Name</div>';
-        document.getElementById('lastName').focus();
+        document.getElementById('lastNameValidator').innerHTML = '<div>Please enter your Last Name</div>';
         return false;
     }
     else if(lName.length < 2)
     {
-        document.getElementById('errorMessage').innerHTML += '<div>Last name needs to be more than 2 characters</div>';
-        document.getElementById('lastName').focus();
+        document.getElementById('lastNameValidator').innerHTML = '<div>Last name needs to be more than 2 characters</div>';
         return false;
     }
 
+    document.getElementById('lastNameValidator').innerHTML = '';
     return true;
 }
 
@@ -60,17 +58,16 @@ function validateAddress()
     
     if(!address)
     {
-        document.getElementById('errorMessage').innerHTML += '<div>Please enter your Address</div>';
-        document.getElementById('address').focus();
+        document.getElementById('addressValidator').innerHTML = '<div>Please enter your Address</div>';
         return false;
     }
     else if(address.length < 2)
     {
-        document.getElementById('errorMessage').innerHTML += '<div>Address needs to be more than 2 characters</div>';
-        document.getElementById('address').focus();
+        document.getElementById('addressValidator').innerHTML = '<div>Address needs to be more than 2 characters</div>';
         return false;
     }
     
+    document.getElementById('addressValidator').innerHTML = '';
     return true;
 }
 
@@ -80,17 +77,16 @@ function validateCity()
     
     if(!city)
     {
-        document.getElementById('errorMessage').innerHTML += '<div>Please enter your City</div>';
-        document.getElementById('city').focus();
+        document.getElementById('cityValidator').innerHTML = '<div>Please enter your City</div>';
         return false;
     }
     else if(city.length < 2)
     {
-        document.getElementById('errorMessage').innerHTML += '<div>City needs to be more than 2 characters</div>';
-        document.getElementById('city').focus();
+        document.getElementById('cityValidator').innerHTML = '<div>City needs to be more than 2 characters</div>';
         return false;
     }
     
+    document.getElementById('cityValidator').innerHTML = '';
     return true;
 }
 
@@ -100,11 +96,11 @@ function validatePostalCode()
     
     if(!postal)
     {
-        document.getElementById('errorMessage').innerHTML += '<div>Please enter your Postal Code in the form L0L 0L0</div>';
-        document.getElementById('postalCode').focus();
+        document.getElementById('postalCodeValidator').innerHTML = '<div>Please enter your Postal Code in the form L0L 0L0</div>';
         return false;
     }
     
+    document.getElementById('postalCodeValidator').innerHTML = '';
     return true;
 }
 
@@ -114,10 +110,11 @@ function validateProvince()
     
     if(province === '-- Province --')
     {
-        document.getElementById('errorMessage').innerHTML += '<div>Please choose a Province from the Menu</div>';
+        document.getElementById('provinceValidator').innerHTML = '<div>Please choose a Province from the Menu</div>';
         return false;
     }
     
+    document.getElementById('provinceValidator').innerHTML = '';
     return true;
 }    
 
@@ -127,10 +124,11 @@ function validateCountry()
     
     if(country === '-- Country --')
     {
-        document.getElementById('errorMessage').innerHTML += '<div>Please choose a Country from the Menu</div>';
+        document.getElementById('countryValidator').innerHTML = '<div>Please choose a Country from the Menu</div>';
         return false;
     }
     
+    document.getElementById('countryValidator').innerHTML = '';
     return true;
 }    
 
@@ -140,16 +138,17 @@ function validateEmailAddress()
     
     if(!email)
     {
-        document.getElementById('errorMessage').innerHTML += '<div>Please enter your Email Address</div>';
+        document.getElementById('emailValidator').innerHTML = '<div>Please enter your Email Address</div>';
         return false;
     }
 
     if(!validateEmail(email))
     {
-        document.getElementById('errorMessage').innerHTML += '<div>Please enter a valid Email Address (me.example@gmail.com)</div>';
+        document.getElementById('emailValidator').innerHTML = '<div>Please enter a valid Email Address (me.example@gmail.com)</div>';
         return false;
     }
     
+    document.getElementById('emailValidator').innerHTML = '';
     return true;
 }
 
@@ -159,20 +158,21 @@ function validatePhoneNumber()
     
     if(!phone)
     {
-        document.getElementById('errorMessage').innerHTML += '<div>Please enter your Phone Number</div>';
+        document.getElementById('phoneNumberValidator').innerHTML = '<div>Please enter your Phone Number</div>';
         return false;
     }
     else if(phone.length < 10)
     {
-        document.getElementById('errorMessage').innerHTML += '<div>Phone number must be 10 digits long</div>';
+        document.getElementById('phoneNumberValidator').innerHTML = '<div>Phone number must be 10 digits long</div>';
         return false;
     }
     if(!isOnlyNumbers(phone))
     {
-        document.getElementById('errorMessage').innerHTML += '<div>Please enter only numbers for your Phone Number</div>';
+        document.getElementById('phoneNumberValidator').innerHTML = '<div>Please enter only numbers for your Phone Number</div>';
         return false;
     }
     
+    document.getElementById('phoneNumberValidator').innerHTML = '';
     return true;
 }
 
@@ -183,9 +183,11 @@ function validatePaymentMethod()
     
     if(!cheque.checked || !moneyOrder.checked)
     {
-        document.getElementById('errorMessage').innerHTML += '<div>Please choose a Payment Method</div>';
+        document.getElementById('paymentValidator').innerHTML = '<div>Please choose a Payment Method</div>';
         return false;
     }
+    
+    document.getElementById('paymentValidator').innerHTML += '';
     
     return true;
 }    

@@ -6,6 +6,7 @@
     <title>Store</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/main.css">
     <script src="js/jquery-2.2.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </head>
@@ -262,7 +263,7 @@
                                     <fieldset class="form-group">
                                         <label for="firstName">First Name</label>
                                         <input type="text" class="form-control" id="firstName" placeholder="First" onblur="validateFirstName()" onkeyup="convertFirstLetterToUpper('firstName')">
-                                        <div id="firstNameValidator" class="validationMessage"></div>
+                                        <div id="firstNameValidator" class="validatorMessage"></div>
                                     </fieldset>
                                     <fieldset class="form-group">
                                         <label for="lastName">Last Name</label>
@@ -303,6 +304,7 @@
                                             <option value="NU">Nunavut</option>
                                             <option value="YT">Yukon</option>
                                         </select>
+                                        <div id="provinceValidator" class="validatorMessage"></div>
                                     </fieldset>
                                     <fieldset class="form-group">
                                         <label for="country">Country</label>
@@ -312,14 +314,17 @@
                                             <option value="CA">Canada</option>
                                             <option value="Other">Other</option>
                                         </select>
+                                        <div id="countryValidator" class="validatorMessage"></div>
                                     </fieldset>
                                     <fieldset class="form-group">
-                                        <label for="emailAddress">Email Address</label>
+                                        <label for="email">Email Address</label>
                                         <input type="text" class="form-control" id="email" placeholder="me@gmail.com" onblur="validateEmailAddress()">
+                                        <div id="emailValidator" class="validatorMessage"></div>
                                     </fieldset>
                                     <fieldset class="form-group">
                                         <label for="phoneNumber">Phone Number</label>
                                         <input type="text" class="form-control" id="phoneNumber" placeholder="555-555-5555" onblur="validatePhoneNumber()">
+                                        <div id="phoneNumberValidator" class="validatorMessage"></div>
                                     </fieldset>
                                 </div>
                             </div>
@@ -332,15 +337,17 @@
                                     
                                     <div class="radio">
                                         <label>
-                                            <input type="radio" name="payment" id="cheque" value="cheque">Cheque
+                                            <input type="radio" name="payment" id="cheque" value="cheque" onblur="validatePaymentMethod()">Cheque
                                         </label>
                                     </div>
                         
                                     <div class="radio">
                                         <label>
-                                            <input type="radio" name="payment" id="moneyOrder" value="moneyOrder">Money Order
+                                            <input type="radio" name="payment" id="moneyOrder" value="moneyOrder" onblur="validatePaymentMethod()">Money Order
                                         </label>
                                     </div>
+                                    
+                                    <div id="paymentValidator" class="validatorMessage"></div>
                                     
                                     <input type="submit" name="submit" id="submit" value="Proceed to Checkout" onclick="validateForm()">
                                     <input type="button" name="clear" id="clear" value="Clear Form" onclick="clearForm()">
